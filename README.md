@@ -11,9 +11,9 @@ npm start
 That will compile Elm files and start a local server on [localhost:8000](http://localhost:8000).
 
 
-## Router is an obsolete notion
+## Do we need routers?
 
-...at least since Elm 0.17, and I say that as the author of `elm-transit-router`, one of the three main routers for Elm 0.16.
+I don't think so anymore, at least since Elm 0.17 and port modules, and I say that as the author of `elm-transit-router`, one of the three main routers for Elm 0.16.
 
 What we need is route parsing: a way to transform the string representation of the path or hash to our app internal representation. There are a few packages for this already: [elm-route](https://github.com/Bogdanp/elm-route) and [elm-route-parser](https://github.com/etaque/elm-route-parser) (disclaimer: I'm the author). [Hop](https://github.com/sporto/hop) also has parsing tools but it isn't yet migrated to 0.17.
 
@@ -26,11 +26,11 @@ Browser history handling is done with ports for now, but it will be easy to upgr
 
 ## How it works
 
-An enum type is created to modelize the current route with its params in the model. That's done in `Route` module.
-
 Browser location is the reference, so our app needs to subscribe to location changes, and push new locations to browser on navigation (and not the other way around). That's the job of `Location` module, through ports, handled by JS in `index.html`. Can be path or hash, works the same.
 
-Once we've subscribed to path updates, we parse them in `update` with the help of the route parser. Our model is updated with new route and we can then react to this route update (see `mountRoute`).
+`Route` module defines an enum type is created to modelize the current route with params within the model.
+
+Once we've subscribed to path updates, we parse them in `update` with the help of the route parser. Then our model is updated with new route and we can then react to this route update (see `mountRoute`).
 
 In summary:
 
