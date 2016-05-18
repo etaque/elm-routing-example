@@ -1,0 +1,15 @@
+{
+  "name": "elm-routing-example",
+  "version": "1.0.0",
+  "description": "Elm routing example",
+  "scripts": {
+    "start": "npm run build-elm && npm run start-server",
+    "build-elm": "elm make src/Main.elm --output dist/example.js",
+    "start-server": "./node_modules/local-web-server/bin/cli.js -s index.html"
+  },
+  "author": "Emilien Taque",
+  "homepage": "https://github.com/etaque/elm-routing-example#readme",
+  "devDependencies": {
+    "local-web-server": "^1.1.0"
+  }
+}
