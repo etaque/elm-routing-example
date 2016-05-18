@@ -15,7 +15,7 @@ That will compile Elm files and start a local server on [localhost:8000](http://
 
 I don't think so anymore, at least since Elm 0.17 and port modules, and I say that as the author of `elm-transit-router`, one of the three main routers for Elm 0.16.
 
-What we need is route parsing: a way to transform the string representation of the path or hash to our app internal representation. There are a few packages for this already: [elm-route](https://github.com/Bogdanp/elm-route) and [elm-route-parser](https://github.com/etaque/elm-route-parser) (disclaimer: I'm the author). [Hop](https://github.com/sporto/hop) also has parsing tools but it isn't yet migrated to 0.17.
+What we need is route parsing: a way to transform the string representation of the path or hash to our app internal representation. There are a few packages for this already: [Bogdanp/elm-route](https://github.com/Bogdanp/elm-route) and [etaque/elm-route-parser](https://github.com/etaque/elm-route-parser) (disclaimer: I'm the author). [sporto/hop](https://github.com/sporto/hop) also has parsing tools but it isn't yet migrated to 0.17.
 
 For the rest, Elm is already efficient at the job, it's just a few `Msg` away!
 
@@ -40,3 +40,7 @@ In summary:
 * `SetRoute` is the order to update route in model at the middle of the animation (can be combined with `PathUpdated` in the absence of animation).
 
 The view match the current route to render the desired page. Plus, here we add style for transition animation.
+
+## See also
+
+ * [Bogdanp/elm-route app example](https://github.com/Bogdanp/elm-route/tree/master/examples/app)
