@@ -35,7 +35,6 @@
     });
 
     window.onpopstate = function(event) {
-      console.log(document.location);
       app.ports.pathUpdates.send(document.location.pathname);
     };
   </script>
