@@ -1,5 +1,8 @@
 # SPA routing with Elm 0.17
 
+_note: this is obsolete since [elm-navigation](https://github.com/elm-lang/navigation) release_.
+
+
 Install Elm 0.17 (see
 [http://elm-lang.org/install](http://elm-lang.org/install)) and then:
 
